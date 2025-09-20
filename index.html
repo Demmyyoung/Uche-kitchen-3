@@ -32,9 +32,10 @@
         <header class="header">
             <nav class="navigation">
                 <a href="store.html" class="nav-link">Store</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="#" class="nav-link cart-link" aria-label="Shopping Cart">
+                <a href="#about-section" class="nav-link">About</a>
+                <a href="cart.html" class="nav-link cart-link" aria-label="Shopping Cart">
                     <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-counter">0</span>
                 </a>
             </nav>
         </header>
@@ -54,11 +55,11 @@
                             From jollof rice to spicy suya, we’ve got your taste buds covered.
                             Eat well. Spend less. Stay satisfied.
                         </p>
-                        <a href="store.html" class="buy-button">Shop now</a>
+                        <a href="store.html" class="buy-button">Order now</a>
                     </div>
                 </main>
             </section>
-            <section class="about-section">
+            <section class="about-section" id="about-section">
                 <div class="about-card">
                     <div class="about-image-container">
                         <img src="./image/portratejpg.jpg" alt="Portrait" class="product-image">
@@ -77,6 +78,7 @@
             </section>
         </main>
     </div>
+   <script src="js/cart.js" defer></script>
    <script>
     window.addEventListener("load", function () {
         const loader = document.querySelector(".loader-wrapper");
@@ -92,6 +94,38 @@
             sessionStorage.setItem("hasSeenLoader", "true");
         }, 2000);
         }
+
+        console.log("Page loaded. Checking hash:", window.location.hash);
+        if (window.location.hash) {
+            // Use a timeout to allow the page to render before scrolling
+            setTimeout(() => {
+                const element = document.querySelector(window.location.hash);
+                console.log("Element found for hash:", element);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                    console.log("Scrolled to element.");
+                } else {
+                    console.log("Element not found for hash:", window.location.hash);
+                }
+            }, 100);
+        }
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            console.log("Anchor clicked. Target ID:", targetId, "Target Element:", targetElement);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+                console.log("Scrolled to element from anchor click.");
+            } else {
+                console.log("Target element not found for anchor click:", targetId);
+            }
+        });
     });
     </script>
 </body>

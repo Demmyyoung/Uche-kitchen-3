@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product 4</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Libertinus+Serif+Display&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="index.html#about-section" class="nav-link">About</a>
+            <a href="store.html" class="nav-link">Store</a>
+            <a href="cart.html" class="nav-link cart-link" aria-label="Shopping Cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-counter">0</span>
+            </a>
+        </nav>
+    </header>
+    <section class="product-detail-section" data-product-id="4" data-product-name="Jollof Rice" data-product-price="5000" data-product-image="./image/download.jpg">
+        <div class="product-detail-card">
+            <div class="product-image-container">
+                <img src="./image/download.jpg" alt="Product" class="product-image">
+            </div>
+            <div class="product-text-container">
+                <h1 class="product-title">Product 4</h1>
+                <p class="product-subtitle">A vibrant one-pot rice dish simmered in a rich tomato and pepper sauce, infused with spices and a signature smoky flavor. Perfect as a main course or side dish, and pairs beautifully with grilled meats, fried plantains, or vegetables.</p>
+                <p class="price">₦5,000</p>
+                <a href="#" class="buy-button">Add to Cart</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="notification" class="notification">Product added to cart!</div>
+
+    <script src="js/cart.js" defer></script>
+</body>
+
+</html>
