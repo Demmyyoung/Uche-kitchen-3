@@ -1,0 +1,307 @@
+/* Universal styles for the entire website. */
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  background-image: url("../image/new backgroung.png"); /* Replace with your background image URL */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Background image style for the pages. You will need to replace this URL. */
+.background-image {
+  display: none;
+}
+/* Fullscreen wrapper */
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.loader-wrapper .loader-image {
+  width: 150px; /* Adjust size as needed */
+  height: auto;
+  margin-bottom: 20px; /* Space between image and loader */
+  animation:pulse 2s infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.loader-wrapper.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Loading bar style */
+.loader {
+  width: 200px;
+  height: 10px;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.loader::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: #ff6868;
+  animation: load 2s linear;
+}
+
+/* Animation keyframes */
+@keyframes load {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Main container for the page. */
+.container {
+
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.visible {
+  opacity: 1;
+}
+
+/* Header and navigation styling. */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  position: relative;
+  transition: opacity 0.2s;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Product Section Styles */
+.product-detail-section {
+  /* Add any specific styles for the product section here if needed */
+}
+
+.product-detail-card {
+  display: flex;
+  background-color: #000000;
+  padding: 50px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 900px;
+  width: 90%;
+  margin-top: 100px;
+}
+
+.product-image-container {
+  flex: 1;
+  padding-right: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.product-image {
+  width: 100%;
+  height: 300px;
+  background-color: #fff;
+  object-fit: cover;
+}
+
+.product-text-container {
+  flex: 1;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white; /* Text color inside the black box */
+}
+
+.product-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.product-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.buy-button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: background-color 0.3s ease 0.1s, color 0.3s ease 0.1s;
+  text-decoration: none;
+}
+
+.buy-button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Responsive design for smaller screens. */
+@media (max-width: 768px) {
+  .product-detail-card {
+    flex-direction: column;
+    width: 95%;
+    padding: 15px;
+  }
+  .product-image-container {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+  }
+  .product-text-container {
+    padding-left: 0;
+    padding-top: 15px;
+  }
+}
+/* About Section Styles */
+.about-section {
+  margin-top: 300px;
+}
+
+.about-card {
+  display: flex;
+  background-color: #000;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 900px;
+  width: 90%;
+  padding: 50px;
+  /* margin-bottom: 800px; */
+}
+
+.about-image-container {
+  flex: 1;
+  padding-right: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.about-text-container {
+  flex: 1;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white; /* Text color inside the black box */
+}
+
+.about-text-wrapper p {
+  color: white;
+}
+
+/* Responsive design for smaller screens. */
+@media (max-width: 768px) {
+  .about-card {
+    flex-direction: column;
+    width: 95%;
+    padding: 15px;
+  }
+  .about-image-container {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+  }
+  .about-text-container {
+    padding-left: 0;
+    padding-top: 15px;
+  }
+}
+
+/* Add this at the end of your CSS file */
+.content-hidden {
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+.content-visible {
+  opacity: 1;
+  transition: opacity 0.5s fease;
+}
+
+.loader-wrapper .loader-image {
+  width: 150px; /* Adjust size as needed */
+  height: auto;
+  margin-bottom: 20px; /* Space between image and loader */
+  animation:pulse 2s infinite;
+}
+

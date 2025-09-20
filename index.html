@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uche Kitchen</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Libertinus+Serif+Display&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+    <script>
+      if (sessionStorage.getItem("hasSeenLoader")) {
+        document.write('<style>.loader-wrapper { display: none; }</style>');
+        document.write('<style>.container { opacity: 1; }</style>');
+      }
+    </script>
+</head>
+
+<body>
+     <div class="loader-wrapper">
+         <img src="./image/UCHE WEB DESIGN removebg.png" alt="Loading..." class="loader-image">
+        <div class="loader">
+           
+        </div>
+    </div>
+    
+    <div class="container content-hidden">
+        <header class="header">
+            <nav class="navigation">
+                <a href="store.html" class="nav-link">Store</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="#" class="nav-link cart-link" aria-label="Shopping Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </nav>
+        </header>
+        <main class="main-content">
+            <section class="product-detail-section">
+                <main class="product-detail-card">
+                    <div class="product-image-container">
+                        <!-- Placeholder for the product image -->
+                        <img src="./image/download.jpg" alt="Product" class="product-image">
+                    </div>
+                    <div class="product-text-container">
+                        <h1 class="product-title">AFRO CHOPS</h1>
+                        <p class="product-subtitle">Get your quality African meals right here on campus—fresh,
+                            delicious,
+                            and
+                            affordably priced for students.
+                            From jollof rice to spicy suya, we’ve got your taste buds covered.
+                            Eat well. Spend less. Stay satisfied.
+                        </p>
+                        <a href="store.html" class="buy-button">Shop now</a>
+                    </div>
+                </main>
+            </section>
+            <section class="about-section">
+                <div class="about-card">
+                    <div class="about-image-container">
+                        <img src="./image/portratejpg.jpg" alt="Portrait" class="product-image">
+                    </div>
+                    <div class="about-text-container">
+                        <div class="about-text-wrapper">
+                            <p>Get your quality African meals right here on campus—fresh, delicious, and affordably
+                                priced for students.</p>
+                            <p>From jollof rice to spicy suya, we’ve got your taste buds covered.</p>
+                            <p>Eat well. Spend less. Stay satisfied.</p>
+                            <p>Want it to sound more playful, formal, or tailored to a specific event or dish? I can
+                                remix it for you!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+   <script>
+    window.addEventListener("load", function () {
+        const loader = document.querySelector(".loader-wrapper");
+        const content = document.querySelector(".container");
+        const hasSeenLoader = sessionStorage.getItem("hasSeenLoader");
+
+        if (!hasSeenLoader) {
+        // First page load in this tab: show loader
+        setTimeout(function () {
+            loader.classList.add("hidden");
+            content.classList.remove("content-hidden");
+            content.classList.add("content-visible");
+            sessionStorage.setItem("hasSeenLoader", "true");
+        }, 2000);
+        }
+    });
+    </script>
+</body>
+
+</html>
