@@ -199,7 +199,7 @@ body {
   margin-top: 10px;
 }
 
-.buy-button {
+.buy-button, .add-to-cart {
   background-color: transparent;
   color: #ffffff;
   border: 1px solid #ffffff;
@@ -212,7 +212,7 @@ body {
   text-decoration: none;
 }
 
-.buy-button:hover {
+.buy-button:hover, .add-to-cart:hover {
   opacity: 0.8;
 }
 

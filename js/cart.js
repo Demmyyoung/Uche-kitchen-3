@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         showNotification('Product added to cart!');
     };
 
-    document.querySelectorAll('.add-to-cart, .buy-button').forEach(button => {
+    document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', (e) => {
             e.preventDefault(); // prevent navigation for <a class="buy-button">
             const productElement = button.closest('[data-product-id]');
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img src="${item.image}" alt="${item.name}" class="cart-item-image">
                     <div class="cart-item-details">
                         <div class="cart-item-name">${item.name}</div>
-                        <div class="cart-item-price">₦${item.price.toFixed(2)}</div>
+                        <div class="cart-item-price">${item.price.toFixed(2)}</div>
                         <div class="cart-item-quantity">Quantity: ${item.quantity}</div>
                     </div>
                     <button class="remove-item-btn" data-index="${index}">Remove</button>
