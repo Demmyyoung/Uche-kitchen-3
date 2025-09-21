@@ -6,11 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (cartCounter) {
             const count = cart.reduce((sum, item) => sum + item.quantity, 0);
             cartCounter.textContent = count;
-            if (count === 0) {
-                cartCounter.style.display = 'none';
-            } else {
-                cartCounter.style.display = 'inline-block';
-            }
         }
     };
 

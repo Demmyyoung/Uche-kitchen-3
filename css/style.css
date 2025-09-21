@@ -329,6 +329,10 @@ body {
     font-size: 12px;
 }
 
+.cart-counter:empty {
+    display: none;
+}
+
 /* Notification */
 .notification {
     position: fixed;
