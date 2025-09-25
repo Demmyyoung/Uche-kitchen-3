@@ -108,6 +108,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
 
+    const checkout = () => {
+        const stripe = Stripe('pk_test_51SAxkUCVZLpBMYlFI21SrkiUbI5XZBkx85HcnZ6A3Q5DtijbkhjZDjwV0Eg7gLzIwdV0Fhp46Q37fiwxysq7HVuP0040VuMqDi'); // Replace with your actual publishable key
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        const line_items = cart.map(item => {
+            return {
+                price_data: {
+                    currency: 'usd',
+                    product_data: {
+                        name: item.name,
+                        images: [item.image],
+                    },
+                    unit_amount: item.price * 100,
+                },
+                quantity: item.quantity,
+            };
+        });
+
+        fetch('/create-checkout-session', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                items: line_items,
+            }),
+        })
+        .then(response => response.json())
+        .then(session => {
+            return stripe.redirectToCheckout({ sessionId: session.id });
+        })
+        .then(result => {
+            if (result.error) {
+                alert(result.error.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    };
+
+    const checkoutButton = document.querySelector('.checkout-btn');
+    if (checkoutButton) {
+        checkoutButton.addEventListener('click', checkout);
+    }
+
     updateCartCounter();
     renderCartPage();
 });
